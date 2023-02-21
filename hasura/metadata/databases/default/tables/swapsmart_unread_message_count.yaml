@@ -1,0 +1,3 @@
+table:
+  name: unread_message_count
+  schema: swapsmart

@@ -1,0 +1,32 @@
+table:
+  name: chat
+  schema: swapsmart
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        senderID:
+          _eq: X-Hasura-User-Id
+      columns:
+        - receiverID
+        - senderID
+        - swapMessage
+        - textMessage
+        - type
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - receiverID
+        - senderID
+        - swapMessage
+        - textMessage
+        - timestamp
+        - type
+      filter:
+        _or:
+          - receiverID:
+              _eq: X-Hasura-User-Id
+          - senderID:
+              _eq: X-Hasura-User-Id

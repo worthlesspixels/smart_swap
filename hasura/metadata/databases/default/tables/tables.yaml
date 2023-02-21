@@ -1,0 +1,6 @@
+- "!include swapsmart_chat.yaml"
+- "!include swapsmart_unread_messages_count.yaml"
+- "!include swapsmart_userAvatar.yaml"
+- "!include swapsmart_userWallet.yaml"
+- "!include swapsmart_user_online.yaml"
+- "!include swapsmart_users.yaml"

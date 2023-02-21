@@ -1,0 +1,6 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE VIEW swapsmart.active_chats AS
+--   SELECT chat."receiverID", COUNT(*)
+--     FROM swapsmart.chat
+--     GROUP BY chat."receiverID";

@@ -1,0 +1,31 @@
+table:
+  name: users
+  schema: swapsmart
+array_relationships:
+  - name: chats
+    using:
+      foreign_key_constraint_on:
+        column: receiverID
+        table:
+          name: chat
+          schema: swapsmart
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - avatar
+        - lastSeen
+        - userID
+        - username
+        - walletPubkey
+      filter: {}
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - avatar
+        - lastSeen
+      filter:
+        userID:
+          _eq: X-Hasura-User-Id
+      check: null

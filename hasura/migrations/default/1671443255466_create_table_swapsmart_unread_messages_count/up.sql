@@ -1,0 +1,1 @@
+CREATE TABLE "swapsmart"."unread_messages_count" ("senderID" text NOT NULL, "receiverID" text NOT NULL, "messageCount" integer NOT NULL, PRIMARY KEY ("receiverID","senderID") , UNIQUE ("senderID", "receiverID"));

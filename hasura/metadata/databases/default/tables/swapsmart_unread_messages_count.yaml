@@ -1,0 +1,25 @@
+table:
+  name: unread_messages_count
+  schema: swapsmart
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - messageCount
+        - receiverID
+        - senderID
+      filter:
+        _or:
+          - senderID:
+              _eq: X-Hasura-User-Id
+          - receiverID:
+              _eq: X-Hasura-User-Id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - messageCount
+      filter:
+        receiverID:
+          _eq: X-Hasura-User-Id
+      check: null

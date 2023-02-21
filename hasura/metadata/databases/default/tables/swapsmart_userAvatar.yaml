@@ -1,0 +1,29 @@
+table:
+  name: userAvatar
+  schema: swapsmart
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        userID:
+          _eq: X-Hasura-User-Id
+      columns:
+        - image
+        - userID
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - image
+        - userID
+      filter:
+        userID:
+          _eq: X-Hasura-User-Id
+update_permissions:
+  - role: user
+    permission:
+      columns: []
+      filter:
+        userID:
+          _eq: X-Hasura-User-Id
+      check: null

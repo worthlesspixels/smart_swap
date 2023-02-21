@@ -1,0 +1,11 @@
+table:
+  name: user_online
+  schema: swapsmart
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - lastSeen
+        - userID
+        - username
+      filter: {}
